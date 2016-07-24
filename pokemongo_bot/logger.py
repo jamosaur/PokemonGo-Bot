@@ -22,5 +22,5 @@ def log(string, color = 'white'):
         if(string):
             lcd.message(string)
 
-    with open('/var/log/poke.log', 'w') as f:
+    with open('poke.log', 'a+') as f:
         f.write(string + '\n')
