@@ -1,4 +1,5 @@
 import time
+import os
 try:
     import lcd
     lcd = lcd.lcd()
@@ -20,3 +21,6 @@ def log(string, color = 'white'):
     if lcd:
         if(string):
             lcd.message(string)
+
+    with open('/var/log/poke.log', 'w') as f:
+        f.write(string + '\n')
